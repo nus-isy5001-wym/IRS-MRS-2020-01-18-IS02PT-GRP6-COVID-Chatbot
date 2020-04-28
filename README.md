@@ -2,7 +2,7 @@
 ## SECTION 1 : PROJECT TITLE
 ## COVID-19 CHATBOT
 
-<img src="https://user-images.githubusercontent.com/39640791/80490441-ebf32600-8993-11ea-88c9-84a4cb0a4951.jpg"
+<img src="https://user-images.githubusercontent.com/39640791/80490768-6e7be580-8994-11ea-8d23-93c997245147.jpg"
      style="float: left; margin-right: 0px;" />
 
 ---
