@@ -2,7 +2,7 @@
 ## SECTION 1 : PROJECT TITLE
 ## COVID-19 CHATBOT
 
-<img src="https://user-images.githubusercontent.com/39640791/79581553-212e8700-80fd-11ea-82a1-d8414e21e3e2.png"
+<img src="https://user-images.githubusercontent.com/39640791/80490441-ebf32600-8993-11ea-88c9-84a4cb0a4951.jpg"
      style="float: left; margin-right: 0px;" />
 
 ---
@@ -52,9 +52,7 @@ More reference video presentations [here](https://telescopeuser.wordpress.com/20
 
 **Recommended Sections for Project Report / Paper:**
 - Executive Summary / Paper Abstract
-- Sponsor Company Introduction (if applicable)
 - Business Problem Background
-- Market Research
 - Project Objectives & Success Measurements
 - Project Solution (To detail domain modelling & system design.)
 - Project Implementation (To detail system development & testing approach.)
@@ -64,8 +62,8 @@ More reference video presentations [here](https://telescopeuser.wordpress.com/20
 - Appendix of report: Mapped System Functionalities against knowledge, techniques and skills of modular courses: MR, RS, CGS
 - Appendix of report: Installation and User Guide
 - Appendix of report: 1-2 pages individual project report per project member, including: Individual reflection of project journey: (1) personal contribution to group project (2) what learnt is most useful for you (3) how you can apply the knowledge and skills in other situations or your workplaces
-- Appendix of report: List of Abbreviations (if applicable)
-- Appendix of report: References (if applicable)
+- Appendix of report: List of Abbreviations
+- Appendix of report: References
 
 ---
 ## SECTION 7 : MISCELLANEOUS
