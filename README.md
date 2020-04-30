@@ -26,7 +26,7 @@ Our project team hopes that with our solution, the general public will be able t
 | :------------ |:---------------:| :-----| :-----|
 | Lim Wee Kiat | A0213481M | Project idea generation; Dialogflow – intents implementation & testing, entity creation, contexts & parameter design for feedback; Django webhook – Telegram integration, Django database design & setup, infection statistic, infection trend plots, A* search for route & google API integration, feedback card, subscription & announcement; Heroku host & Cronjob Scheduler; Debug & troubleshooting; Graphic design & project report template design & writing | weekiat.lim7@gmail.com |
 | Eu Jin Marcus Yatim | A0124453M | Project idea generation; Dialogflow – intent implementation & testing, layout and flow of responses;  User and Deployment manual writing; Project report writing | marcusyatim@gmail.com |
-| Teoh Yee Seng | A0213501B | Project idea generation; Dialogflow – intent implementation & testing (diagnosis and checkin intent), entity & parameter setting; Django webhook – Code refactoring into OOP style with inheritance, diagnosis decision table, auto checking notification using multiprocessing, user database management; Debug & troubleshooting; Project report writing | tyseng1102@outlook.com |
+| Teoh Yee Seng | A0213501B | Project idea generation; Dialogflow – intent implementation & testing (diagnosis and checkin intent), entity & parameter setting; Django webhook – Code refactoring into OOP style with inheritance, diagnosis decision table, auto checking notification using multiprocessing, user database management; Debug & troubleshooting; Project report writing | tyseng1102@gmail.com |
 
 ---
 
