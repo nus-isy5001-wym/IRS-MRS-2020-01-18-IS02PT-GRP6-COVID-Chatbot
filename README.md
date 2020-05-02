@@ -51,19 +51,19 @@ More reference video presentations [here](https://telescopeuser.wordpress.com/20
 `Refer to project report at Github Folder: ProjectReport`
 
 **Table of Content for Project Report / Paper:**
-1 Executive Summary
-2 Business Justification
-3 Project Team
-4 Project Solution
-5 Project Architecture & Implementation
-6 Project Performance & Validation
-7 Challenge & Recommendation
-APPENDIX OF REPORT A: Project Proposal
-APPENDIX OF REPORT B: Mapped System Functionalities against knowledge, techniques and skills of modular courses
-APPENDIX OF REPORT C: Instalation and User Guide (see separate document)
-APPENDIX OF REPORT D: List of Intents
-APPENDIX OF REPORT E: Individual Reports
-APPENDIX OF REPORT F: Abbreviations & References
+- 1 Executive Summary
+- 2 Business Justification
+- 3 Project Team
+- 4 Project Solution
+- 5 Project Architecture & Implementation
+- 6 Project Performance & Validation
+- 7 Challenge & Recommendation
+- APPENDIX OF REPORT A: Project Proposal
+- APPENDIX OF REPORT B: Mapped System Functionalities against knowledge, techniques and skills of modular courses
+- APPENDIX OF REPORT C: Instalation and User Guide (see separate document)
+- APPENDIX OF REPORT D: List of Intents
+- APPENDIX OF REPORT E: Individual Reports
+- APPENDIX OF REPORT F: Abbreviations & References
 
 ---
 ## SECTION 7 : MISCELLANEOUS
