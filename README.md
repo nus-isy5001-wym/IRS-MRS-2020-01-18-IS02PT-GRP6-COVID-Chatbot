@@ -42,33 +42,35 @@ More reference video presentations [here](https://telescopeuser.wordpress.com/20
 
 ## SECTION 5 : USER GUIDE
 
-`Refer to appendix <Installation & User Guide> in project report at Github Folder: ProjectReport`
-
+`Refer to appendix <Installation & User Guide> in Github Folder: ProjectReport`
+`Note that due to long pages, it is not appended into Appendix of ProjectReport. The team felt it will be more organized and clear if it treated as a separate document.`
 
 ---
 ## SECTION 6 : PROJECT REPORT / PAPER
 
 `Refer to project report at Github Folder: ProjectReport`
 
-**Recommended Sections for Project Report / Paper:**
-- Executive Summary / Paper Abstract
-- Business Problem Background
-- Project Objectives & Success Measurements
-- Project Solution (To detail domain modelling & system design.)
-- Project Implementation (To detail system development & testing approach.)
-- Project Performance & Validation (To prove project objectives are met.)
-- Project Conclusions: Findings & Recommendation
-- Appendix of report: Project Proposal
-- Appendix of report: Mapped System Functionalities against knowledge, techniques and skills of modular courses: MR, RS, CGS
-- Appendix of report: Installation and User Guide
-- Appendix of report: 1-2 pages individual project report per project member, including: Individual reflection of project journey: (1) personal contribution to group project (2) what learnt is most useful for you (3) how you can apply the knowledge and skills in other situations or your workplaces
-- Appendix of report: List of Abbreviations
-- Appendix of report: References
+**Table of Content for Project Report / Paper:**
+1 Executive Summary
+2 Business Justification
+3 Project Team
+4 Project Solution
+5 Project Architecture & Implementation
+6 Project Performance & Validation
+7 Challenge & Recommendation
+APPENDIX OF REPORT A: Project Proposal
+APPENDIX OF REPORT B: Mapped System Functionalities against knowledge, techniques and skills of modular courses
+APPENDIX OF REPORT C: Instalation and User Guide (see separate document)
+APPENDIX OF REPORT D: List of Intents
+APPENDIX OF REPORT E: Individual Reports
+APPENDIX OF REPORT F: Abbreviations & References
 
 ---
 ## SECTION 7 : MISCELLANEOUS
 
 `Refer to Github Folder: Miscellaneous`
-
 ### Reference.txt
 * List of information references that the team uses in their work
+
+### COVIDChatbot.zip
+* Exported zip file for Dialogflow Agent for COVID-19 Chatbot. Refer to Installation & User Guide for deployment.
