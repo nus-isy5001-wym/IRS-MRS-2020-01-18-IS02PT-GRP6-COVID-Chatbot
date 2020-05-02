@@ -1,4 +1,4 @@
-from chatbot_app.models import globalStatus, globalLastUpdate, MOHHeadlines, hospitalList
+from chatbot_app.models import globalStatus, globalLastUpdate, MOHHeadlines, hospitalList, graphPlot
 import pandas as pd
 from requests import get
 from bs4 import BeautifulSoup
@@ -7,6 +7,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 import matplotlib.dates as mdates
+from django.core.files.images import ImageFile
+import io
 
 #### FOR GLOBAL STATUS - FOR INFECTION STATUS INTENT ####
 
@@ -50,7 +52,7 @@ class Webscrape():
         # Plot Charts
         pd_table['death_rate'] = pd_table['death']*100/pd_table['diagnosed']
         fig, axs = plt.subplots(nrows=2, ncols=1, figsize=(10,6), sharex=True)
-        fig.suptitle('Infected & Death Cases Trend of Top 15 Countries as of', fontsize= 18)
+        fig.suptitle(f'Infected & Death Cases Trend of Top 15 Countries as of {LastUpdatetext}', fontsize= 18)
         ax1 = pd_table[0:16].plot.bar(x='country', y='diagnosed', ax = axs[0], fontsize=12, grid=True)
         ax2 = pd_table[0:16].plot.bar(x='country', y='death', ax = axs[1], fontsize=12, cmap = 'autumn', grid=True)
         ax3 = pd_table[0:16].plot.line(x='country', y='death_rate', ax = axs[1], fontsize=12, cmap = 'Dark2_r', grid=True, secondary_y=True, marker = 'o', linewidth=2)
@@ -64,12 +66,18 @@ class Webscrape():
         ax3.set_xlim(-0.5,14.5)
         ax3.set_yticks(np.linspace(ax3.get_yticks()[0], round(ax3.get_yticks()[-1]), 6))
         ax2.set_yticks(np.linspace(ax2.get_yticks()[0], round(ax2.get_yticks()[-1],-3), 6))
-        plt.savefig('static/plots/worldwide.png',bbox_inches = "tight")
+        #plt.savefig('static/plots/worldwide.png',bbox_inches = "tight")
+        figure = io.BytesIO()
+        plt.savefig(figure, format = 'png',bbox_inches = "tight")
+        image = ImageFile(figure)
+        plot_instance = graphPlot(name = 'worldwide.png')
+        plot_instance.plot.save('worldwide.png', image)
 
         print('Graphs Job Completed')
 
         globalLastUpdate.objects.all().delete()
         globalStatus.objects.all().delete()
+        graphPlot.objects.all().delete()
         try:
             globalStatus.objects.bulk_create(model_instance)
             print('Update globalStatus complete!')
@@ -89,25 +97,26 @@ class Webscrape():
         response = get(url)
         print("MOH website response stataus: ",response.status_code)
 
-        soup = BeautifulSoup(response.text, "html.parser")
-        a = soup.findAll('table')[12].findAll('tr')
+        if response.status_code == 200:
+            soup = BeautifulSoup(response.text, "html.parser")
+            a = soup.findAll('table')[12].findAll('tr')
 
-        for i, news in enumerate(a[1:]):
-            for fmt in ('%d %b %Y', '%d %B %Y'):
+            for i, news in enumerate(a[1:]):
+                for fmt in ('%d %b %Y', '%d %B %Y'):
+                    try:
+                        dict = {
+                                'news_date' : datetime.strptime(news.findAll('td')[0].getText().rstrip().replace('\xa0', ' '), fmt).date(),
+                                'news_title' : news.findAll('td')[1].getText().replace('\xa0',' '),
+                                'news_link' : news.findAll('a', href=True)[0]['href']
+                                }
+                    except ValueError:
+                        pass
                 try:
-                    dict = {
-                            'news_date' : datetime.strptime(news.findAll('td')[0].getText().rstrip().replace('\xa0', ' '), fmt).date(),
-                            'news_title' : news.findAll('td')[1].getText().replace('\xa0',' '),
-                            'news_link' : news.findAll('a', href=True)[0]['href']
-                            }
-                except ValueError:
-                    pass
-            try:
-                MOHHeadlines.objects.create(**dict) #use ** to add dict into models
-                print(f'Title {i+1} updated successfully')
-                self.success = 1
-            except:
-                print(f'Title {i+1} failed to update or data already exist')
+                    MOHHeadlines.objects.create(**dict) #use ** to add dict into models
+                    print(f'Title {i+1} updated successfully')
+                    self.success = 1
+                except:
+                    print(f'Title {i+1} failed to update or data already exist')
 
 
 if __name__ == "__main__":

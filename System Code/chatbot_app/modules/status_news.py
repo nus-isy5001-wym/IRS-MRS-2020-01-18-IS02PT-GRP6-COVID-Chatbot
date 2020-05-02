@@ -38,9 +38,8 @@ class StatusNews(Server):
         self.main_text = f'Currently, {country.capitalize()} has a total of {diagnose_:.0f} confirmed cases, + {new_case_:.0f} new case(s) from yesterday. There is total of {death_:.0f} death case(s), + {new_death_:.0f} new death case(s) from yesterday. \n\n{discharged_:.0f} people recovered from it, and {critical_:.0f} people still in critical condition. \n\n{LastUpdate}.'
         
         vkey = random.randrange(1,99999999,1)
-        self.img_url = f"https://covid-chatbot.herokuapp.com/static/plots/{country}.png?v={vkey}"
-        
-        return super().sendMsgImg()
+        self.img_url = f"https://covid-chatbot.herokuapp.com/media/plots/{country}.png?v={vkey}"
+        return super().sendMsg(get_fb=True, image=True)
 
     def headlineNews(self):
         news_list = list(MOHHeadlines.objects.order_by('-news_date').values())
@@ -52,5 +51,5 @@ class StatusNews(Server):
             metatext = metatext + f"{date_} \n{title_} \n{link_}\n\n"
         
         self.main_text = metatext + "For more info: https://www.moh.gov.sg/covid-19"
-        return super().sendMsg()
+        return super().sendMsg(get_fb=True, single=True)
 

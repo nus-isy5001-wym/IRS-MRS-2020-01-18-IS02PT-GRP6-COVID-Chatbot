@@ -5,8 +5,11 @@ import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 import matplotlib.dates as mdates
 import seaborn as sns
+from chatbot_app.models import graphPlot
+from django.core.files.images import ImageFile
+import io
 
-class gen_graph():
+class Gen_graph():
     
     def __init__(self):
         self.status_success = 0
@@ -56,7 +59,11 @@ class gen_graph():
             for tick in ax2.get_xticklabels():
                 tick.set_rotation(45)
                 tick.set_horizontalalignment("center")
-            plt.savefig(f'static/plots/{i.lower()}.png',bbox_inches = "tight")
+            figure = io.BytesIO()
+            plt.savefig(figure, format = 'png',bbox_inches = "tight")
+            image = ImageFile(figure)
+            plot_instance = graphPlot(name = f'{i.lower()}.png')
+            plot_instance.plot.save(f'{i.lower()}.png', image)
             print(f'Plotted {i}')
             ax.cla()
             ax2.cla()
@@ -66,7 +73,7 @@ class gen_graph():
         df.index = pd.to_datetime(df.index)
         df2 = dead_us_grp['US']
         df2.index = pd.to_datetime(df.index)
-        fig.suptitle(f'Total Confirmed Cases in {i} for Past 30 Days', fontsize= 18)
+        fig.suptitle(f'Total Confirmed Cases in USA for Past 30 Days', fontsize= 18)
         ax = sns.lineplot(data=df, palette="tab10", linewidth=2.5, marker='o', color="coral", ax = axs[0], legend='full')
         ax2 = sns.lineplot(data=df2, palette="tab10", linewidth=2.5, marker='o', color="red", ax = axs[1], legend='full')
         ax.set_ylabel('Total Diagnosed')
@@ -79,7 +86,11 @@ class gen_graph():
         for tick in ax2.get_xticklabels():
             tick.set_rotation(45)
             tick.set_horizontalalignment("center")
-        plt.savefig('static/plots/usa.png',bbox_inches = "tight")
+        figure = io.BytesIO()
+        plt.savefig(figure, format = 'png',bbox_inches = "tight")
+        image = ImageFile(figure)
+        plot_instance = graphPlot(name = 'usa.png')
+        plot_instance.plot.save('usa.png', image)
         print('Plotted usa')
         
         self.status_success = 1
