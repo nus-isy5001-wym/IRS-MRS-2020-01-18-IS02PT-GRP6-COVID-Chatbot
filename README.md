@@ -33,10 +33,7 @@ Our project team hopes that with our solution, the general public will be able t
 
 ## SECTION 4 : VIDEO OF SYSTEM MODELLING & USE CASE DEMO
 
-[![demo video link here](http://img.youtube.com/vi/-AiYLUjP6o8/0.jpg)](https://youtu.be/-AiYLUjP6o8 "Sudoku AI Solver")
-
-Note: It is not mandatory for every project member to appear in video presentation; Presentation by one project member is acceptable. 
-More reference video presentations [here](https://telescopeuser.wordpress.com/2018/03/31/master-of-technology-solution-know-how-video-index-2/ "video presentations")
+[![https://www.youtube.com/watch?v=WncwxKlWacQ](https://img.youtube.com/vi/WncwxKlWacQ/0.jpg)](https://www.youtube.com/watch?v=WncwxKlWacQ "COVID-19 Chatbot & Use Case Demo - on Telegram")
 
 ---
 
