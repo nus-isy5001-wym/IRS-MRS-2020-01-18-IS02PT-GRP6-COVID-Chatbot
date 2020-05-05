@@ -16,12 +16,13 @@ from bs4 import BeautifulSoup
 import time
 
 user_list = list(userList.objects.all().values())
-print(user_list)
 
-with open('message.txt',encoding="utf8") as file:  
+msg_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'message.txt')
+with open(msg_dir,encoding="utf8") as file:  
     msg = file.read()
 
-with open('bot_token.txt',encoding="utf8") as file:  
+bot_dir = os.path.join(PROJECT_ROOT, 'bot_token.txt')
+with open(bot_dir,encoding="utf8") as file:  
     token = file.read()
 
 counter = 0
@@ -33,4 +34,4 @@ for item in user_list:
         announcement_text += f"Hello, {user_name}\n\n" + msg
         a = requests.get(f'https://api.telegram.org/bot{token}/sendMessage?chat_id={chat_id}&text={announcement_text}')
         counter += 1
-        print(f'{counter} message sent. Response: {a}')
+        print(f'{counter}: Message sent to {user_name}. Response: {a}')

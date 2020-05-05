@@ -52,4 +52,4 @@ class UserDB(Server):
         else:
             self.main_text = "I don't understand. Please select from either yes or no button! 😁"
 
-        return super().sendMsg(get_fb=True, single=True)
+        return super().sendMsg(get_fb=False, single=True)
