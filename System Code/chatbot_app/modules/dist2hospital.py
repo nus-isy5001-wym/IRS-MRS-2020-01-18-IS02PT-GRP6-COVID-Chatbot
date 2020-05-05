@@ -8,7 +8,8 @@ import os
 class Dist2Hospital(Server):
     def __init__(self, request):
         super().__init__(request)
-        self.__key = key_ = os.environ['key_']
+        self.__key = key_ = 'AIzaSyAnp6Kdqg-bKDqHAaS-bVytQwYfLAVzSYA'
+        #Please do not abuse api key
         self.gmaps = googlemaps.Client(key = key_)
 
     def dist2hospital(self):
