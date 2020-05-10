@@ -56,7 +56,7 @@ class Webscrape():
         ax1 = pd_table[0:16].plot.bar(x='country', y='diagnosed', ax = axs[0], fontsize=12, grid=True)
         ax2 = pd_table[0:16].plot.bar(x='country', y='death', ax = axs[1], fontsize=12, cmap = 'autumn', grid=True)
         ax3 = pd_table[0:16].plot.line(x='country', y='death_rate', ax = axs[1], fontsize=12, cmap = 'Dark2_r', grid=True, secondary_y=True, marker = 'o', linewidth=2)
-        ax1.set_ylabel('Total Infected')
+        ax1.set_ylabel('Total Infected (Mil)')
         ax2.set_ylabel('Total Death')
         ax2.set_xlabel('Countries')
         ax3.set_ylabel('Death Rate (%)')
@@ -67,6 +67,7 @@ class Webscrape():
         ax3.set_yticks(np.linspace(ax3.get_yticks()[0], round(ax3.get_yticks()[-1]), 6))
         ax2.set_yticks(np.linspace(ax2.get_yticks()[0], round(ax2.get_yticks()[-1],-3), 6))
         #plt.savefig('static/plots/worldwide.png',bbox_inches = "tight")
+        graphPlot.objects.all().delete()
         figure = io.BytesIO()
         plt.savefig(figure, format = 'png',bbox_inches = "tight")
         image = ImageFile(figure)
@@ -77,7 +78,7 @@ class Webscrape():
 
         globalLastUpdate.objects.all().delete()
         globalStatus.objects.all().delete()
-        graphPlot.objects.all().delete()
+        
         try:
             globalStatus.objects.bulk_create(model_instance)
             print('Update globalStatus complete!')
