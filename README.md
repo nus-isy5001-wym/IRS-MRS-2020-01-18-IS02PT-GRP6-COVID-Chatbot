@@ -1,3 +1,14 @@
+```
+To Project Assessor: 
+Project has been freezed as of 10 May 2020 on commit ID #1619edc. 
+However, as the project's knowledge sources are mainly from external web like www.worldometers.info/coronavirus/
+which its information format is subject to change and this could result in knowledge extraction failure. The 
+program will still work without knowledge extraction as it still keeps old information, however, for the best 
+experience, the team will fix minor patch ONLY to handle change in external source.
+
+We recommend to use the latest commit instead. Else, the frozen commit as of 10 May (#1619edc) without latest 
+knowledge information works too. Commit detailed can be reviewed in /commits/master.
+```
 
 ## SECTION 1 : PROJECT TITLE
 ## COVID-19 CHATBOT
